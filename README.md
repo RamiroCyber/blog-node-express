@@ -7,3 +7,5 @@
 ### MySql
 ### EJS
 ### Bootstrap
+
+#### criando rotas e melhorando navbar

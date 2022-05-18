@@ -2,30 +2,35 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const connection = require('./database/connection');
-const categoiesController = require('./categories/categoryController');
 
+const categoiesController = require('./categories/CategoryController');
+const articlesController = require('./articles/ArticleController');
 
-//VIEW E STATIC
+const Article = require ('./models/Article');
+const Category = require ('./models/Category');
+
+//--VIEW E STATIC--
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-//BODYPARSER
+//--BODYPARSER--
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(bodyParser.json());
 
 
-//ROTAS
+//--ROTAS--
 app.get('/', (req, res) => {
     res.render('index')
 });
 
 app.use('/', categoiesController);
+app.use('/', articlesController);
 
 
 
-//DATABASE
+//--DATABASE--
 connection.authenticate().then(() => {
     console.log('Conectado');
 }).catch((error) => {
