@@ -26,4 +26,19 @@ router.get('/admin/categories', (req, res) => {
     });
 });
 
+router.get('/categories/delete/:id', (req, res) => {
+    const id = req.params.id;
+    if (id != undefined && !isNaN(id)) {
+
+        Category.destroy({
+            where: { id: id }
+
+        }).then(() => { res.redirect('/admin/categories') });
+
+    } else {
+        res.redirect('/admin/categories')
+    }
+
+});
+
 module.exports = router;
