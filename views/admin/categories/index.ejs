@@ -29,8 +29,9 @@
                                 <%= category.titleRoute%>
                             </th>
                             <th>
-                                <a class="btn btn-warning">Editar</a>
-                                <a href="/categories/delete/<%= category.id%>" class="btn btn-danger">Excluir</a>
+                                <a href="/admin/categories/edit/<%= category.id%>" class="btn btn-warning">Editar</a>
+                                <a href="/categories/delete/<%= category.id%>" class="btn btn-danger"
+                                    onclick="deletar()">Excluir</a>
                             </th>
                         </tr>
 
@@ -38,5 +39,10 @@
                 </tbody>
             </table>
         </div>
-
         <%- include('../../partials/footer.ejs');%>
+
+            <script>
+                function deletar() {
+                    alert('Você deletou a categoria')
+                }
+            </script>
