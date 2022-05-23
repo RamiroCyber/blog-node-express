@@ -10,4 +10,5 @@
 
 ####
 
-#### Criando rotas e melhorando navbar
+#### resolvendo problema de relacionamento
+
