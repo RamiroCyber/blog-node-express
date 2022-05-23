@@ -25,7 +25,7 @@ const Article = connection.define('articles', {
     }
 })
 //Relacionamentos
-Category.hasMany(Article);
+Category.hasMany(Article)
 Article.belongsTo(Category);
 
 module.exports = Article;

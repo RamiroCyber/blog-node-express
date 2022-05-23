@@ -19,9 +19,6 @@ const Category = connection.define('categories', {
         allowNull: false
 
     }
-
-
-
 });
 
 module.exports = Category;
